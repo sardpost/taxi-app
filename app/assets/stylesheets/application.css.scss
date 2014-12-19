@@ -10,6 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ * 
  *= require_tree .
  *= require_self
  */
+
+
+.jumbotron {
+  background-image: url("bg-header.png");
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: cover;  
+  margin-bottom: 0px;
+  height: 350px;  
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+

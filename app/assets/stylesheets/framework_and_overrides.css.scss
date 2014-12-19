@@ -1,3 +1,4 @@
+
 // import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -79,4 +80,66 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+
+//.navbar-inverse { background-color: #FFFFFF !important; border-color: #FFFFFF !important; }
+
+.navbar-default {
+	background-color: #727489;
+	border-color: #104660;
+}
+.navbar-default .navbar-brand {
+	color: #fbfeff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #999999;
+}
+.navbar-default .navbar-text {
+	color: #fbfeff;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fbfeff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #999999;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: #999999;
+	background-color: #104660;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	color: #999999;
+	background-color: #104660;
+}
+.navbar-default .navbar-toggle {
+	border-color: #104660;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: #104660;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fbfeff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #fbfeff;
+}
+.navbar-default .navbar-link {
+	color: #fbfeff;
+}
+.navbar-default .navbar-link:hover {
+	color: #999999;
+}
+
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		color: #fbfeff;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		color: #999999;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		color: #999999;
+		background-color: #104660;
+	}
 }
