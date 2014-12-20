@@ -18,8 +18,10 @@
       <br><br>
       <div class="row">
         <div class="col-md-4">
-          <%= image_tag "plane18.png",:class => "img-rounded", height: '140px', width: '140px' %>
+
+  <!--        <%= image_tag "plane18.png",:class => "img-rounded", height: '140px', width: '140px' %> -->
           <% @posts.find(1) do |post|%>
+          <%= image_tag((post.image_file_name), :class => "img-rounded", height: '140px', width: '140px' )%>
           <h2 ><%= post.title %></h2>
           <tr>
             <td><%= post.description %></td> <br>

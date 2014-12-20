@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'sprockets-rails'
 gem 'devise'
 gem 'high_voltage'
 gem 'pundit'

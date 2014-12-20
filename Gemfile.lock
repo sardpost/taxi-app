@@ -237,6 +237,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-commands-rspec
+  sprockets-rails
   sqlite3
   therubyracer
   turbolinks
