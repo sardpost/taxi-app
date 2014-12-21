@@ -1,13 +1,13 @@
 <div class=container >
-<%= form_for(@post) do |p| %>
+<%= form_for @post do |p| %>
 <p>
   <%= p.label :title %><br/>
   <%= p.text_field :title %>
   <%= p.label :description %><br/>
   <%= p.text_area :description, cols: 40, rows: 14 %>
   <p>
-    <%= p.label :image_file_name %><br/>
-    <%= p.text_field :image_file_name %>
+    <%= p.label :Image_Upload %><br/>
+    <%= p.file_field :image %>
   </p>
 
 </p>

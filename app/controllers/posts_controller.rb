@@ -32,7 +32,8 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
   end
 
   def post_params
-    params.require(:post).permit(:title, :description, :image_file_name)
+    params.require(:post).permit(:title, :description, :image)
+  #  params.require(:post).permit(:title, :description)
   end
 
 end

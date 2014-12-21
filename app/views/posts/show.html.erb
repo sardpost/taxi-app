@@ -1,6 +1,7 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
-  <%= image_tag((@post.image_file_name), :class => "img-rounded", height: '140px', width: '140px' )%>
+<!--  <%= image_tag((@post.image_file_name), :class => "img-rounded", height: '140px', width: '140px' )%> -->
+   <%= image_tag @post.image.url %>
   <p>
     <h2>    <%= @post.title %> </h2>
   </p>

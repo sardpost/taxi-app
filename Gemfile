@@ -15,6 +15,7 @@ gem 'autoprefixer-rails'
 gem 'sprockets-rails'
 gem 'devise'
 gem 'high_voltage'
+gem "paperclip", "~> 4.2"
 gem 'pundit'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
