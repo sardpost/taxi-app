@@ -18,19 +18,23 @@
       <br><br>
       <div class="row">
         <div class="col-md-4">
-        
           <% @posts.find(1) do |post|%>
-	  <%= image_tag post.image.url(:medium) %> 
-	  <br>
-          <h2 ><%= post.title %></h2>
-          <tr>
+	         <%= image_tag post.image.url(:medium) %>
+	          <br>
+            <h2 ><%= post.title %></h2>
+              <tr>
             <td><%= post.description %></td> <br>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-          <p>
-            <%= link_to 'View details »', post_path(post), class: "btn" %>
-          </p>
+
+              <%if user_signed_in? %>
+                  <% if current_user.admin? %>
+                    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+                    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <% end %>
+              <% end %>
+              </tr>
+              <p>
+                <%= link_to 'View details »', post_path(post), class: "btn" %>
+              </p>
           <% end %>
         </div>
 
