@@ -7,8 +7,8 @@
         <h2 class="text-center">
           Top Sardinia Driver
         </h2>
-        <p>
-          This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+        <p align="center">
+          Think of the real and concrete possibility of having at your complete disposal a driver in Sardinia for your everyday personal or business needs.
         </p>       
         <p class="text-center">
           <a class="btn btn-primary btn-large" href="#">Learn more</a>
@@ -16,62 +16,38 @@
       </div>
 
       <br><br>
-      <div class="row">
-        <div class="col-md-4">
-          <% @posts.find(1) do |post|%>
+      <div class="row">         
+          <% @posts.[](0..2).each do |post|%>
+	  <div class="col-md-4">
 	         <%= image_tag post.image.url(:medium) %>
 	          <br>
-            <h2 ><%= post.title %></h2>
+	    <div class="well">
+	      <h3><%= post.title %></h3>
               <tr>
-            <td><%= truncate(post.description, length: 250, separator: ' ') %></td> 
-            
-            
+	      <td><%= truncate(post.description, length: 250, separator: ' ') %></td>     
                  <%if user_signed_in? %>
                   <% if current_user.admin? %>
 		    <br>
                     <td><%= link_to 'Edit', edit_post_path(post) %></td>
                     <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <% end %>
-              <% end %>
+		 <% end %>
               </tr>
               <br><br>
               <p>
                 <%= link_to 'Read more »', post_path(post), class: "btn btn-info" %>
               </p>
-          <% end %>
-        </div>
-
-        <div class="col-md-4">
-          <%= image_tag "footer-car.png",:class => "img-rounded", height: '230px', width: '230px' %>
-          <h2>
-            Heading
-          </h2>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-          </p>
-          <p>
-            <a class="btn" href="#">View details »</a>
-          </p>
-        </div>
-
-        <div class="col-md-4">
-          <%= image_tag "car72.png",:class => "img-rounded", height: '140px', width: '140px' %>
-          <h2>
-            Heading
-          </h2>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-          </p>
-          <p>
-            <a class="btn" href="#">View details »</a>
-          </p>
-        </div>
+            </div>
+           </div>
+          <% end %>                
       </div>
-      <br> <br>
+  
+     
 
       <div class="row">
         <div class="col-md-6">
           <%= image_tag "sea8.png",:class => "img-rounded", height: '140px', width: '140px' %>
+          <div class="well">
           <h2 class="text-center">
             Heading
           </h2>
@@ -79,11 +55,14 @@
             Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
           </p>
           <p>
-            <a class="btn" href="#">View details »</a>
+            <a class="btn btn-info" href="#">View details »</a>
           </p>
+         </div>
         </div>
+        
         <div class="col-md-6">
           <%= image_tag "airplane68.png", :class => "img-rounded", height: '140px', width: '140px' %>
+          <div class="well">
           <h2 class="text-center">
             Heading
           </h2>
@@ -91,8 +70,9 @@
             Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
           </p>
           <p>
-            <a class="btn" href="#">View details »</a>
+            <a class="btn btn-info" href="#">View details »</a>
           </p>
+          </div>
         </div>
 
       </div>

@@ -37,6 +37,10 @@ img {
 main {
   @extend .container;
   background-color: #eee;
+  //background: url('sardegna_sfondo.png');  
+  //background-repeat:no-repeat;
+  //background-size:contain;
+  //background-position:center;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar

@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
   has_attached_file :image,
-	styles: {:normal => "200x200", :medium => "140x140>", :thumb => "100x100>" }, 
+	styles: {:normal => "180x180>", :medium => "140x140>", :thumb => "100x100#" }, 
 		:default_style => :medium, 
-		:default_url => "/images/logo.png"
+		:default_url => "/assets/images/logo.png"
   
   validates :title, presence: true
   validates :description, presence: true

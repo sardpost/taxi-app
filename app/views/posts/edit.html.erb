@@ -1,18 +1,20 @@
 <div class=container >
+<div class="well">
 <%= form_for @post do |p| %>
 <p>
   <%= p.label :title %><br/>
-  <%= p.text_field :title %>
-  <%= p.label :description %><br/>
-  <%= p.text_area :description, cols: 40, rows: 14 %>
+  <%= p.text_field :title %><br><br>
+  <%= p.label :description %><br>
+  <%= p.text_area :description, cols: 80, rows: 18 %> <br>
   <p>
-    <%= p.label :Image_Upload %><br/>
-    <%= p.file_field :image %>
+    <%= p.label :Image_Upload %><br>
+    <%= p.file_field :image, class: "btn btn-default"  %>
   </p>
 
 </p>
 <p>
-  <%= p.submit %>
+  <%= p.submit "Update Post" , class: "btn btn-default btn-primary"  %>
 </p>
 <% end %>
+</div>
 </div>
