@@ -2,17 +2,17 @@
   <div class="container">
     <div class="row">
       <br>
-      <div class="jumbotron well">
+      <div class="jumbotron well">	
         <%= image_tag "logo.png",:class => "img-rounded", height: '140px', width: '140px' %>
         <h2 class="text-center">
           Top Sardinia Driver
         </h2>
         <p>
           This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-        </p>
+        </p>       
         <p class="text-center">
           <a class="btn btn-primary btn-large" href="#">Learn more</a>
-        </p>
+        </p>        
       </div>
 
       <br><br>
@@ -23,17 +23,20 @@
 	          <br>
             <h2 ><%= post.title %></h2>
               <tr>
-            <td><%= post.description %></td> <br>
-
-              <%if user_signed_in? %>
+            <td><%= truncate(post.description, length: 250, separator: ' ') %></td> 
+            
+            
+                 <%if user_signed_in? %>
                   <% if current_user.admin? %>
+		    <br>
                     <td><%= link_to 'Edit', edit_post_path(post) %></td>
                     <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <% end %>
               <% end %>
               </tr>
+              <br><br>
               <p>
-                <%= link_to 'View details »', post_path(post), class: "btn" %>
+                <%= link_to 'Read more »', post_path(post), class: "btn btn-info" %>
               </p>
           <% end %>
         </div>
