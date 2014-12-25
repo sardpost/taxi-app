@@ -13,6 +13,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'sprockets-rails'
+gem "activerecord-tableless", "~> 1.0"
 gem 'devise'
 gem 'high_voltage'
 gem "paperclip", "~> 4.2"
