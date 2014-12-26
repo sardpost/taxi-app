@@ -1,16 +1,20 @@
  
-class Contact < ActiveRecord::Base
-  has_no_table
+class Contact < MailForm::Base
   
-  column :name, :string
-  column :email, :string
-  column :content, :string
-  
-  validates_presence_of :name
-  validates_presence_of :email
-  validates_presence_of :content
-  validates_format_of :email,
-  :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
-  validates_length_of :content, :maximum => 500
+  attribute :name,      :validate => true
+  attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  attribute :message
+  attribute :nickname,  :captcha  => true
+
+  # Declare the e-mail headers. It accepts anything the mail method
+  # in ActionMailer accepts.
+  def headers
+    {
+      :subject => "Contact Form Taxi App",
+      :to => "ariskion@gmail.com",
+      :from => %("#{name}" <#{email}>)
+    }
+  end 
+ 
   
 end

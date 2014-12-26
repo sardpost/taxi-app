@@ -5,21 +5,21 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(secure_params)
-    if @contact.valid?
-      # TODO save data
-      # TODO send message
-      flash[:notice] = "Message sent from #{@contact.name}."
+    @contact = Contact.new(params[:contact])
+    @contact.request = request
+    if @contact.deliver
+      flash[:notice] = "Thank you for your message. We will contact you soon!"
       redirect_to root_path
     else
+      flash.now[:error] = 'Cannot send message.'
       render :new
     end
   end
   
-  private
+#  private
     
-  def secure_params
-    params.require(:contact).permit(:name, :email, :content)
-  end
+#  def secure_params
+#    params.require(:contact).permit(:name, :email, :content)
+#  end
   
 end
