@@ -46,3 +46,5 @@ Credits
 
 License
 -------
+GPL3
+
